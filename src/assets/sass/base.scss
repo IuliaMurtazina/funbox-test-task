@@ -1,0 +1,72 @@
+////////////////////////////////////////
+// Variables
+
+$color-main-black: #000;
+$color-main-white: #fff;
+
+$color-light-gray: #F2F2F2;
+$color-dark-gray: #666666;
+
+$color-primary: #1698D9;
+$color-primary-hover: #2EA8E6;
+$color-selected: #D91667;
+$color-selected-hover: #E52E7A;
+$color-enabled: #545454;
+
+@mixin vert-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin gray-small-text {
+  color: $color-dark-gray;
+  font-size: 1.6rem;
+}
+
+@mixin card {
+  clip-path: polygon(13.75% 0, 100% 0, 100% 100%, 0 100%, 0 8.64%);
+  border-radius: 1.2rem;
+}
+
+
+////////////////////////////////////////
+// Root
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@import './card-details.scss';
+@import './card.scss';
+
+
+.feed {
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 3.6rem 8rem 6.8rem 8rem;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), url(../images/background.png);
+  @include vert-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+
+  @media only screen and (max-width: 878px) {
+    padding: 3.6rem 2rem 6.8rem 2rem;
+  }
+
+  &__heading {
+    font-size: 3.6rem;
+    color: $color-main-white;
+    text-shadow: 0px 1px 1px #000000;
+    font-weight: 100;
+    font-family: 'Exo 2', sans-serif;
+  }
+}

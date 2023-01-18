@@ -1,0 +1,83 @@
+.card-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+}
+
+.card-item {
+  @include vert-flex;
+  gap: 1.4rem;
+  align-items: center;
+  position: relative;
+
+  &:hover .card-background {
+    background-color: $color-primary-hover;
+  }
+
+  &:hover .card__weight {
+    background-color: $color-primary-hover;
+  }
+
+  &:hover .card__order-link {
+    color: $color-primary-hover;
+    border-bottom: 1px dashed $color-primary-hover;
+  }
+}
+
+.card-background {
+  width: 32rem;
+  height: 48rem;
+  @include card;
+  background-color: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -0.4rem;
+
+  transition: background-color .3s ease-in-out
+}
+
+.selected .card-background {
+  background-color: $color-selected;
+}
+
+.selected .card__weight {
+  background-color: $color-selected;
+}
+
+.selected:hover .card-background {
+  background-color: $color-selected-hover;
+}
+
+.selected:hover .card__weight {
+  background-color: $color-selected-hover;
+}
+
+.enabled-overlay {
+  position: absolute;
+  background-color: rgba($color-light-gray, $alpha: .6);
+  width: 32rem;
+  height: 48rem;
+  @include card;
+  z-index: 100;
+  top: -0.4rem;
+}
+
+.enabled .card-background {
+  background-color: $color-enabled;
+}
+
+.enabled .card__weight {
+  background-color: $color-enabled;
+}
+
+.enabled:hover .card-background {
+  background-color: $color-enabled;
+}
+
+.enabled:hover .card__weight {
+  background-color: $color-enabled;
+}
